@@ -57,5 +57,22 @@ private EnvironmentProperties environmentProperties;
         return zipArray[i];
 
     }
+    public static final Set<String> category = new HashSet<>();
+
+    static {
+        category.add("Individual");
+        category.add("Business");
+        category.add("Media");
+        category.add("Investors");
+        category.add("Career");
+        category.add("General");
+    }
+
+    public String returnCategory(){
+        Random rand = new Random();
+        int i = rand.nextInt(category.size());
+        String[] array = category.toArray(new String[0]);
+        return array[i];
+    }
 
 }
