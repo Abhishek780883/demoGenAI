@@ -9,8 +9,6 @@ import io.cucumber.spring.CucumberContextConfiguration;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import java.util.Map;
-
 @Slf4j
 @CucumberContextConfiguration
 @SpringBootTest
@@ -23,10 +21,12 @@ public class MyStepdefs {
 
     @Given("{string} is able to open successfully Homepage for testcase {string}")
     public void userIsAbleToLoginSuccessfullyOntoHomepageFor(String userType, String testCase) {
-        log.info(userType + " is going to open METLIFE HOMEPAGE for testCase " + testCase);
+
         try {
+            log.info(userType + " is going to open METLIFE HOMEPAGE for testCase " + testCase);
             this.loginPage.loginToPortal(testCase);
             Thread.sleep(2000);
+
         } catch (Exception e) {
             e.printStackTrace();
             throw new RuntimeException();
@@ -36,8 +36,9 @@ public class MyStepdefs {
 
     @Then("User is on {string} Page for testCase {string}")
     public void userIsOnPageForTestCase(String page, String testCase) {
-        log.info(page + " is going to open for testCase " + testCase);
+
         try {
+            log.info(page + " is going to open for testCase " + testCase);
             this.loginPage.goToPage(page, testCase);
             Thread.sleep(2000);
         } catch (Exception e) {
