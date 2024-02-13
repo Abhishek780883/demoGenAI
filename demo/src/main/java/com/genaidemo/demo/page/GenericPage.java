@@ -339,31 +339,6 @@ public abstract class GenericPage {
     }
 
 
-    //@author : Subhadeep Sen
-    //To get the mapped document Type
-    public HashMap<String, String> mappedDocumentsName() {
-        HashMap<String, String> mappedDocumentsName = new HashMap<String, String>();
-        mappedDocumentsName.put("Application Data", "SSNB Application");
-        mappedDocumentsName.put("Attorney Fee Structure Hold Harmless Agreement", "SSNB Hold Harmless Agreement");
-        mappedDocumentsName.put("Commission Sharing Agreement", "SSNB Commission Sharing Agreement");
-        mappedDocumentsName.put("Final Quote", "SSNB Quotes");
-        mappedDocumentsName.put("Lockin Form", "SSNB Quotes");
-        mappedDocumentsName.put("Minor's Compromise or Court Order", "SSNB Minors Compromise");
-        mappedDocumentsName.put("Settlements Agreement Release", "SSNB Settlement Agreement");
-        mappedDocumentsName.put("Uniform Qualified Assignment (UQA form)", "SSNB Qualified Assignment");
-        mappedDocumentsName.put("Court Order appointing Guardian/Conservator/Trust", "SSNB Letters of Guardianship");
-        mappedDocumentsName.put("Copy of the complete Trust Document", "SSNB Trust Documents");
-        mappedDocumentsName.put("Proof of Age for Joint", "SSNB Proof of Birth Joint");
-        mappedDocumentsName.put("Copy of Workers Comp/Order Stipulation", "SSNB Workers Compensation");
-        mappedDocumentsName.put("Proof of Age for annuitant", "SSNB Proof of Birth");
-        mappedDocumentsName.put("W-9", "SSNB W-9");
-        mappedDocumentsName.put("W-4P", "SSNB W4P");
-        mappedDocumentsName.put("Non-Qualified Assignment Agreement", "SSNB Qualified Assignment");
-        mappedDocumentsName.put("Periodic Payment Agreement", "SSNB PPA");
-
-        return mappedDocumentsName;
-    }
-
     //@author : Abhishek Routh
     //change date format
     public String dateFormatter(Object date) throws ParseException {
@@ -595,6 +570,7 @@ public abstract class GenericPage {
         Actions action = new Actions(this.driver);
         action.moveToElement(element).perform();
     }
+
 
 }
 

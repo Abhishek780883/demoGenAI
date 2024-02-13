@@ -6,6 +6,7 @@ import com.genaidemo.demo.config.AppConfig;
 import com.genaidemo.demo.config.webElement.PageElement;
 import lombok.extern.slf4j.Slf4j;
 import org.openqa.selenium.By;
+import org.openqa.selenium.ElementClickInterceptedException;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 
@@ -62,26 +63,36 @@ public class LoginPage extends GenericPage {
                 mouseHover(this.pageElement.getFindADentistHome());
                 highlightElement(this.pageElement.getFindADentistHome());
                 clickTheElementByXpath(this.pageElement.getFindADentistHome());
+                Thread.sleep(2000);
                 conditionalWait(this.pageElement.getDentistPDP(), "presenceOfElementLocated");
                 conditionalWait(this.pageElement.getDentistPDP(), "elementToBeVisible");
                 conditionalWait(this.pageElement.getDentistPDP(), "elementToBeClickable");
                 mouseHover(this.pageElement.getDentistPDP());
-//                highlightElement(this.pageElement.getDentistPDP());
-                scrollWindow(this.pageElement.getDentistPDP());
-                clickTheElementByXpath(this.pageElement.getDentistPDP());
+                highlightElement(this.pageElement.getDentistPDP());
+               try{
+                   clickTheElementByXpath(this.pageElement.getDentistPDP());
+               } catch (ElementClickInterceptedException e){
+                   try{
+                       Thread.sleep(1000);
+                       mouseHover(this.pageElement.getDentistPDP());
+                       clickTheElementByXpath(this.pageElement.getDentistPDP());
+                   } catch (InterruptedException ex){
+                       Thread.currentThread().interrupt();
+                   }
+               }
+                Thread.sleep(2000);
                 conditionalWait(this.pageElement.getDentistPDPsearchBoxInput(), "presenceOfElementLocated");
                 conditionalWait(this.pageElement.getDentistPDPsearchBoxInput(), "elementToBeVisible");
                 conditionalWait(this.pageElement.getDentistPDPsearchBoxInput(), "elementToBeClickable");
                 mouseHover(this.pageElement.getDentistPDPsearchBoxInput());
                 highlightElement(this.pageElement.getDentistPDPsearchBoxInput());
-                scrollWindow(this.pageElement.getDentistPDPsearchBoxInput());
                 getElementByXpath(this.pageElement.getDentistPDPsearchBoxInput()).sendKeys(this.mockTestData.getZipCode());
                 conditionalWait(this.pageElement.getDentistFindAdentistButton(), "elementToBeClickable");
                 mouseHover(this.pageElement.getDentistFindAdentistButton());
                 highlightElement(this.pageElement.getDentistFindAdentistButton());
-                scrollWindow(this.pageElement.getDentistFindAdentistButton());
                 clickTheElementByXpath(this.pageElement.getDentistFindAdentistButton());
-
+                waitForPageLoad();
+                Thread.sleep(3000);
             }
             if (page.contains("Open Enrollment")) {
                 conditionalWait(this.pageElement.getOpenEntrollmentHome(), "presenceOfElementLocated");

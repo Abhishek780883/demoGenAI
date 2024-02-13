@@ -96,7 +96,9 @@ public class PageElement {
     private String dentistPDP;
     private String dentistPDPsearchBoxInput;
     private String dentistFindAdentistButton;
-
+    private String genContactInfoTitle;
+    private String metGenInquiries;
+    private String metGenInquiriesContact;
 
 
 
