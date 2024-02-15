@@ -5,10 +5,7 @@ import com.genaidemo.demo.annotation.Page;
 import com.genaidemo.demo.config.AppConfig;
 import com.genaidemo.demo.config.webElement.PageElement;
 import lombok.extern.slf4j.Slf4j;
-import org.openqa.selenium.By;
 import org.openqa.selenium.ElementClickInterceptedException;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebDriver;
 
 @Page
 @Slf4j
