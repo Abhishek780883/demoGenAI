@@ -77,9 +77,9 @@ public class ContactUsPage extends GenericPage {
     public HashMap<String, String> contactDetailsGet() throws Exception {
         HashMap<String, String> UIcontactUsDetails = null;
         try {
+            waitForPageLoad();
             UIcontactUsDetails = new HashMap<>();
 
-            waitForPageLoad();
             if (presentElement(this.pageElement.getCusIndiReportCard())) {
                 conditionalWait(this.pageElement.getCusIndiReportCard(), "presenceOfElementLocated");
                 conditionalWait(this.pageElement.getCusIndiReportCard(), "elementToBeVisible");
@@ -358,6 +358,8 @@ public class ContactUsPage extends GenericPage {
                 UIcontactUsDetails.put("Structural_Settlements", getElementByXpath(this.pageElement.getCusIndiStructureSettlementContact()).getText());
 
             }
+            waitForPageLoad();
+
         } catch (Exception e) {
             e.printStackTrace();
         }
