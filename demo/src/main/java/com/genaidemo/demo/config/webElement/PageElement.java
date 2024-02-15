@@ -99,15 +99,27 @@ public class PageElement {
     private String genContactInfoTitle;
     private String metGenInquiries;
     private String metGenInquiriesContact;
-
-
-
-
-
-
-
-
-
-
+    private String contactUsTitle;
+    private String supportAndManageTitle;
+    private String nextNewProducts;
+    private String nextNewProductsContact;
+    private String nextGroupAnnuityService;
+    private String nextGroupAnnuityServiceContact;
+    private String nextIndividualLif;
+    private String nextIndividualLifContact;
+    private String nextGroupBenefitsBroker;
+    private String nextGroupBenefitsBrokerContact;
+    private String nextAnnuityCommissions;
+    private String nextAnnuityCommissionsContact;
+    private String nextHomeCommissions;
+    private String nextHomeCommissionsContact;
+    private String nextCorporateLicensing;
+    private String nextCorporateLicensingContact;
+    private String nextLongTermCareCommissionsContact;
+    private String nextLongTermCareCommissions;
+    private String nextStructuralSettlements;
+    private String nextStructuralSettlementsContact;
+    private String nextItSecurityIssue;
+    private String nextItSecurityIssueContact;
 
 }
